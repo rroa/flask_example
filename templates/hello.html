@@ -4,6 +4,7 @@
 </head>
 <body>
   <h1>Hello {{ name }}!</h1>
-  <a href="{{url_for('static', filename='hello.txt')}}">Download text file</a>
+  <a href="{{url_for('profile.timeline', username='test')}}">Blueprint path</a>
+  <a href="{{url_for('static', filename='hello.txt')}}">Download text file from static folder</a>
 </body>
 </html>

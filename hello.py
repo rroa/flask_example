@@ -1,9 +1,12 @@
 from flask import Flask, request, render_template
 from prefix_mid import PrefixMiddleware
+from views.profile import profile
 
 application = Flask(__name__, static_url_path="", static_folder="static")
 application.debug = True
 application.wsgi_app = PrefixMiddleware(application.wsgi_app, prefix='/raul')
+application.register_blueprint(profile)
+
 
 @application.errorhandler(404)
 def page_not_found(error):
